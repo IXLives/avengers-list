@@ -1,14 +1,19 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
-function Avenger(props) {
- 
-        const heroId = props.character.id;
+class Avenger extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    
+    
+    render() {
         return(
-            <Link to = {`/avengers/${heroId}`} className = 'character-card'>
-                <h2>{props.character.name}</h2>
-                <img src = {props.character.thumbnail} />
+            <Link to = {`/avengers/${this.props.character.id}`} className = 'character-card'>
+                <h2>{this.props.character.name}</h2>
+                <img src = {this.props.character.thumbnail} />
             </Link>)
+    }
     
 }
 
